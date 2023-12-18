@@ -1,0 +1,49 @@
+type_selection_2.cpp:3:8: error: ‘template<bool flag, class T, class U> struct select’ redeclared as different kind of entity
+    3 | struct select{
+      |        ^~~~~~
+In file included from /usr/include/x86_64-linux-gnu/sys/types.h:179,
+                 from /usr/include/stdlib.h:395,
+                 from /usr/include/c++/11/cstdlib:75,
+                 from /usr/include/c++/11/ext/string_conversions.h:41,
+                 from /usr/include/c++/11/bits/basic_string.h:6608,
+                 from /usr/include/c++/11/string:55,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from type_selection_2.cpp:1:
+/usr/include/x86_64-linux-gnu/sys/select.h:102:12: note: previous declaration ‘int select(int, fd_set*, fd_set*, fd_set*, timeval*)’
+  102 | extern int select (int __nfds, fd_set *__restrict __readfds,
+      |            ^~~~~~
+type_selection_2.cpp:8:8: error: ‘select’ is not a class template
+    8 | struct select<false, T, U>{
+      |        ^~~~~~
+type_selection_2.cpp:8:26: error: ‘template<class T, class U> struct select’ redeclared as different kind of entity
+    8 | struct select<false, T, U>{
+      |                          ^
+In file included from /usr/include/x86_64-linux-gnu/sys/types.h:179,
+                 from /usr/include/stdlib.h:395,
+                 from /usr/include/c++/11/cstdlib:75,
+                 from /usr/include/c++/11/ext/string_conversions.h:41,
+                 from /usr/include/c++/11/bits/basic_string.h:6608,
+                 from /usr/include/c++/11/string:55,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from type_selection_2.cpp:1:
+/usr/include/x86_64-linux-gnu/sys/select.h:102:12: note: previous declaration ‘int select(int, fd_set*, fd_set*, fd_set*, timeval*)’
+  102 | extern int select (int __nfds, fd_set *__restrict __readfds,
+      |            ^~~~~~
+type_selection_2.cpp: In function ‘int main()’:
+type_selection_2.cpp:12:11: error: ISO C++ forbids comparison between pointer and integer [-fpermissive]
+   12 |     select<true, int, double>::Result x;
+      |     ~~~~~~^~~~~
+type_selection_2.cpp:12:18: error: expected primary-expression before ‘int’
+   12 |     select<true, int, double>::Result x;
+      |                  ^~~
+type_selection_2.cpp:13:25: error: ‘x’ was not declared in this scope
+   13 |     std::cout << sizeof(x)<< std::endl;
+      |                         ^
